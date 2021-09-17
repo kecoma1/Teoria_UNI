@@ -111,3 +111,56 @@ Los middlewares suelen tener 3 capas:
 * Protocolo especifico de servicio (ODBC, Correo, HTTP...).
 * Network Operating System, NOS (Directorio, seguridad, tiempo, API directa...).
 * Transporte (TCP/IP, IPX/SPX...)
+
+# Característacas de los sistemas cliente-servidor.
+El objetivo principal es el de proveer una arquitectura escalable donde la relación entre componentes es asimétrica.
+
+En el modelo arquitectónico WWW tradicional, el _cliente_ realiza peticiones usando el protocolo HTTP o HTTPS, el _servidor_ responde con un documento codificado en HTML.
+
+## Variantes del modelo Cliente-Servidor
+* El "servidor" puede estar __formado por varios servidores__ los cuales se comunican entre si.
+* Existen también __servidores proxy y caches__ los cuales sirven de punto intermedio entre el los servidores donde se almacena la lógica y el procesamiento, y los clientes.
+* El servidor al recibir una petición de un cliente puede enviar un __applet__ a este, con el fin de ejecutar código en el cliente. Para ser más concretos un _applet_ es un programa que puede incrustarse en un documento HTML.
+* El cliente puede enviar un __agente móvil__ y despúes volver a recibirlo con nuevos datos. Un __Agente móvil__ es un programa inteligente y autónomo que puede moverse a través de la red, buscando servicios que el usuario necesita e interacturando con ellos. Puede ejecutarse en el servidor y también en el cliente.
+
+# Arquitectura de las aplicaciones WWW
+En esta arquitectura los sistemas distribuidos son en general modelos de cliente ligero bajo el protocolo HTTP. Los clientes son:
+* *Universales*: Navegadores web.
+* *Específicos*: Programas ejecutados en el cliete.
+
+Los servidores en cambio, suelen ser servidores de _bases de datos_, servidores de _proceso de transacciones_...
+
+Hay que tener en cuenta que la _WWW_ e _internet_ __NO__ son lo mismo, la _WWW_ esta contenida en _internet_.
+
+# Introducción a la computación en la nube
+La __computación en la nube__ es una solución tecnológica con varias definiciones:
+* Acceso a este a través de internet a datos y programas en una ubicación remota.
+* Modelo que permite el acceso bajo demanda de recursos computacionales configurables.
+* Sistemas distribuidos en los que todos los recursos HW y SW son ofrecidos como un servicio por parte de un tercero.
+  
+## Ventajas
+* Disminución de costes.
+* Permite desarrollos complejos sin necesidad de un conocimiento avanzado ya que el sistema puede traer software adicional instalado.
+* Nos ahorra tiempo debido a que no debemos administrar los sistemas.
+  
+## Desventajas
+* Privacidad
+* Falta de control y dependencia de un proveedor.
+
+## Características esenciales
+* 1. **Servicios bajo demanda**: Capacidades de procesamiento, recursos físicos o virtuales... todo esto se adquiere bajo demanda y en función de las necesidades.
+* 2. **Amplio acceso de red**: Los servicios se encuentran disponibles en una red que puede ser privada, compartida o pública, que puede ser accesibles a través de mecanismos estandar.
+* 3. **Pooling de recursos**: Las capacidades se asignan y reasignan dinámicamente entre los distintos clientes en función de la demanda.
+* 4. **Rápida elasticidad**: El escalado horizontal y vertical de capacidades se produce rápidamente.
+* 5. **Medición de servicios**: El uso de recursos se monitoriza y se reporta de manera automática.
+
+## 4 modelos de despliegue
+* **Nube privada**. Accesible solo por una organización.
+* **Nube pública**. El acceso es abierto.
+* **Nube comunitaria**. Compartida por organizaciones.
+* **Nube híbrida**. La infraestructura general se compone de 2 o más infraestructuras.
+
+## 3 modelos de servicio
+* **IaaS (Infraestructura - Infrastructure as a Service)**: Se proporciona capacidad de procesamiento, almacenamiento, red y otros recursos computacionales fundamentales.
+* **PaaS (Plataforma - Platform as a Service)**: Ofrece un entorno preconfigurado de desarrollo/ejecución usando lenguajes de programación, librerías (enfocado a desarrolladores).
+* **SaaS (Software - Software as a Service)**: Se da acceso a las aplicaciones que el proveedor ejecuta en su infraestructura, sin tener ningún control sobre esta.
