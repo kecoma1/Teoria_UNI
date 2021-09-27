@@ -103,3 +103,27 @@ No es obligatorio. __Especifican un sublenguaje de XML__ estableciendo la lista 
 ### Lenguajes de la WWW. JSON JavaScript Object Notation
 Es muy popular a día de hoy ya que es legible para las personas y almacena los datos siguiendo la notación de *objetos* y *arrays*.
 XML y JSON, en principio, sirven para lo mismo. 
+
+## WEB Interactiva. Las aplicaciones web
+El modelo Web hipertexto no permite más interacción del usuario que seguir hiperenlaces para obtener contenido estático en una lectura secuencial de documentos.
+
+### Formularios
+Una forma de web interactiva son los __formularios__. Se definen mediante la etiqueta < FORM > y tienen un campo _action_, en el que se introduce la URL del recurso a solicitar, y tienen otro campo _method_ donde se especifica el método de envio de los datos (POST o GET).
+Dentro de las etiquetas _form_ podemos tener campos como:
+* Input: text, passowrd, checkbox, radio...
+* Select: Listas de selección múltiple.
+* Textarea: Campo de texto multilínea.
+* Button: Botón de acción.
+
+### CGI: Common Gateway Interface
+Otra forma de web interactiva son los CGI. Estos son programas externo que reciben información del servidor. Es también un método "estandar" para que un servidor WWW pueda ejecutar programas externos. El paso de información se realiza mediante _variables de entorno_, _línea de comandos_ y la _entrada y salida estandar_.
+
+Las __ventajas__ de los CGI es que son sencillos de programar, se usan en cualquier lenguaje de programación y el CGI no afecta al servidor.
+Las __desventajas__ son que, son _lentos_ ya que cada ejecución requiere crear un proceso, y que el programa CGI termina con cada llamada.
+
+En los CGI la gestión de sesiones está en manos de los programas mediante capos de formularios ocultos.
+
+### COOKIES y sesiones
+Es un pequeño fragmento de información que el servidor (con permiso del navegador) almacena en el cliente. Cada vez que el navegador solicite una nueva página al servidor, este también le envía una cookie. Presentan varios problemas de seguridad.
+
+Otros problemas son que por ejemplo no todos los navegadores aceptan ni gestionan correctamente las cookies, se almacenan de forma permanente en el navegador hasta que expiran, problemas de privacidad y anonimato...
