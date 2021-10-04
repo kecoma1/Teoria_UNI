@@ -127,3 +127,53 @@ En los CGI la gestión de sesiones está en manos de los programas mediante capo
 Es un pequeño fragmento de información que el servidor (con permiso del navegador) almacena en el cliente. Cada vez que el navegador solicite una nueva página al servidor, este también le envía una cookie. Presentan varios problemas de seguridad.
 
 Otros problemas son que por ejemplo no todos los navegadores aceptan ni gestionan correctamente las cookies, se almacenan de forma permanente en el navegador hasta que expiran, problemas de privacidad y anonimato...
+
+### WEB API: WEB Application programming interfaces
+Surgen para evitar los problemas de rendimiento de CGI. En esta arquitectura los nuevos programas se enlazan junto con el servidor en una librería dinámica, luego el servidor llama a las funciones de la librería dinámica como tareas dentro del propio proceso servidor. Esta arquitectura también tiene **inconvenientes**; Un fallo en _una rutina puede hacer caer al servidor completo_, los lenguajes de programación están _limitados a C y C++_, y son _dificiles de porgramar_.
+
+### Interfaces híbridas
+Tratan de conseguir las ventajas de los CGI y los WEB APIs evitando sus inconvenientes. Los programas se desarrollan de modo _independiente al servidor web_ y en _cualquier lenguaje_, Los programas arrancados quedan _a la espera de recibir peticiones_, la comunicacion _NO es mediante stdin/stdout_, _tras atender una petición el programa NO finaliza, espera a una siguiente_.
+
+### Páginas dinámicas
+Otra alternativa a los CGIs y los Web APIs son las **páginas dinámicas**. Pueden darse en:
+* **Cliente**: Inclusión de código en el documento que el cliente interpretará para variar dinámicamente la presentación de la página. De esta forma se proporciona "inteligencia" en el navegador.
+* **Servidor**: Inclusión de código funcional en el fichero HTML que contiene la descripción de la página. El servidor lo interpretará para generar dinámicamente la página antes de su envío al cliente. El servidor se puede implementar creando **procesos** o creando **hilos**.
+
+### Modelos de implementación en el servidor
+* **Multi-proceso**: También llamado pre-forked, porque al iniciarse el servidor crea un pool de procesos que son reusados para atender las distintas peticiones.
+* **Multi-hilo**: Cada petición se maneja a través de un hilo
+* **NodeJS**: Este es un caso especial. Es un sistema usado para programar servidores web en JavaScript. Unicamente usa **un hilo** y **un proceso**. Las llamadas son _no bloqueantes_ y la _programación está basada en eventos_.
+  
+### PHP
+Lenguaje de programación de propósito general (interpretado), la sintaxis es similar a C/C++ y originalmente fue diseñado para el preprocesamiento de texto plano. En el contexto web se utiliza para _generar contenido dinámico del lado del servidor_.
+
+Los scripts PHP están en los documentos HTML y el servidor los interpreta antes de servir las páginas al cliente. El cliente no ve el código PHP, sino los resultados que produce. Las variables suslen tener la siguiente sintaxis $_SERVER, $_REQUEST...
+
+### PYTHON para la WEB
+El lenguaje es un lenguaje de propósito general, orientado a objetos. En el contexto de la web se utiliza para _generar contenido dinámico del lado del servidor_. 
+* **FLASK**: Es un _micro-framework_ simple y extensible, en el cuál, no se toman decisiones por el programador. Las **vistas** son las funciones que se usan para renderizar las páginas, buscar información...
+* **DJANGO**: Es un _framework de alto nivel_ para el desarrollo de aplicaciones web basadas en Python. Se gestionan e integran todos los aspectos relevantes del desarrollo de una aplicación web desde una perspectiva de proyecto cerrado. Las sesiones son gestionadas por un middleware que se debe activar en el fichero de configuración. Por defecto, se basan en el almacenamiento de datos en el servidor y el envión de una cookie con id de sesión.
+
+## Ejecución de código en el cliente
+El objetivo es aumentar la interacción del usuario con la aplicación. Disminuir el trasiego de datos entre el cliente y el servidor. Algunas tecnologias asociadas al uso de JavaScript en el cliente son, **DHTML** _(Dynamic HTML)_ y **AJAX** _(Asynchonous JavaScript and XML)_.
+
+### JAVASCRIPT
+Fue propuesto originalmente por Netscapt Communications Corporation. Se ejecuta en el cliente y se usa comunmente para:
+* Inclusión de efectos visuales en textos e imágenes de las páginas web.
+* Manipulación de contenidos o aspectos de forma dinámica.
+* Relaización de operaciones matemáticas sencillas.
+* ...
+  
+Es un lenguaje de scripting interpretado y la sintaxis es muy _similar a C/C++_. Es _orientado a objetos y eventos_. Por si mismo el lenguaje **NO** es capaz de implementar funcionalidad a ejecutar en un cliente.
+
+JavaScript usa mucho **HTML DOM**. Cuando un navegador carga un documento HTML, este crea un modelo HTML DOM (Document Object Model) del documento. Es un estándar W3C que define objetos para representar elementos HTML, propiedades... La implementación del modelo HTML DOM en el navegador permite desarrollar funcionalidad *DHTML*.
+
+### AJAX Asynchronous JavaScript and XML
+**NO** es un lenguaje de programación, sino una forma de usar tecnología existente en el momento en que se definió. Es un conjunto de técnicas para intercambiar información con el servidor en background y actualizar partes de un documento HTML sin recargar la página completa.
+
+El objeto *XMLHTTPREQUEST* se usa para realizar peticiones HTTP al servidor y, normalmente, es soportado por todos los navegadores actuales. Tiene ciertos métodos principales para enviar la petición:
+* **open(tipo, url, asíncrona)**. Configura la peticion definiendo un formulario. tipo = GET o post, url = destino, asíncrona = True o False, indicador de asincronismo.
+* **send(query_string)**. Envía la petición (submit).
+* Para la gestión del ciclo de vida de la petición se usa **readyState**.
+
+**JQUERY** es una biblioteca que trata de simplificar la programación de la lógica JavaScript en el lado del cliente. Debe ser importada aunque es una biblioteca muy liviana. Normalmente, la biblioteca se cachea en alguna caché intermedia o la del propio navegador.
