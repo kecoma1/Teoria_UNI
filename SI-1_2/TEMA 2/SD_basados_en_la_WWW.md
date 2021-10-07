@@ -177,3 +177,29 @@ El objeto *XMLHTTPREQUEST* se usa para realizar peticiones HTTP al servidor y, n
 * Para la gestión del ciclo de vida de la petición se usa **readyState**.
 
 **JQUERY** es una biblioteca que trata de simplificar la programación de la lógica JavaScript en el lado del cliente. Debe ser importada aunque es una biblioteca muy liviana. Normalmente, la biblioteca se cachea en alguna caché intermedia o la del propio navegador.
+
+Unifica la sintaxis para prácticamente cualquier acción JavaScript:
+* 1. Se selecciona el elemento o elementos HTML sobre los que queremos trabajar.
+* 2. Invocamos un función que realiza una acción sobre ellos.
+* 3. La función devuelve una lista de elementos. Con estos elementos podemos enlazar llamadas incluso aunque la lista no contenga ningún elemento.
+
+$(selector).accion1().accion2()...
+
+Se puede iterar sobre los elementos de forma sencilla mediante el método "each":
+$('form :input').each(function(index, element) {})
+
+JQUERY permite la manipulación dinámica del documento medaiante eventos, accediendo al css o al propio elemento del documento.
+
+Existen varios frameworks, pero los más populares actualmente son:
+* **Boostrap**: HTML, CSS y JS para desarrollar responsive mobile webs.
+* **ZURB Foundation**: Responsive front-end framework.
+* **HTML5 Boilerplate**: Plantillas para HTML5.
+* **ANGULAR JS**: HTML mejorado para aplicaciones web.
+* **REACT JS**: Una librería JS para construir interfaces.
+  
+## HTML5
+HTML 5 = HTML + CSS + JavaScript
+Es el nuevo estándar W3C para HTML, XHTML y HTML DOM desde octubre de 2014.
+Se añaden nuevos elementos específicos sobre estructura del documento: *header*, *nav*, *article*, *section*, *aside*, *footer*.
+
+Se añader¡n nuevos controles para los formularios (*date*, *time*, *email*, *url*, *search*...), tags para video y audio, canvas para dibujar, SVG para gráficos vectoriales, SQLite para el almacenamiento local offline, API para la geolocalización para JS que permite obtener la localización del usuario si éste lo permite...
