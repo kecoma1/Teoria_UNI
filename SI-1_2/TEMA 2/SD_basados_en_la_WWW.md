@@ -203,3 +203,80 @@ Es el nuevo estándar W3C para HTML, XHTML y HTML DOM desde octubre de 2014.
 Se añaden nuevos elementos específicos sobre estructura del documento: *header*, *nav*, *article*, *section*, *aside*, *footer*.
 
 Se añader¡n nuevos controles para los formularios (*date*, *time*, *email*, *url*, *search*...), tags para video y audio, canvas para dibujar, SVG para gráficos vectoriales, SQLite para el almacenamiento local offline, API para la geolocalización para JS que permite obtener la localización del usuario si éste lo permite...
+
+## JAVA EE: JAVA PLATFORM, ENTERPRISE EDITION
+El objetivo de esta tecnología es el de ejecutar componentes Java en el servidor. Tiene varios componentes.
+
+### SERVLETS
+Son aplicaciones JAVA que se ejecutan en el servidor gestionando y procesando peticiones HTTP. Se ejecutan en el servidor bajo petición de un cliente a traves de una URL que identifica al programa. Remplazan a los programas de interfaz CGI. Se necesita un servidor JEE específico.
+
+La implementación de los Servlets se incluyo en Java EE 5 SDK (_javax.servlet.*_). Todo servlet debe implementar la interfaz *javax.servlet.Servlet*.
+
+Los Servlets presentan varias ventajas:
+* **Portabilidad y flexibilidad**: La conexión del servlet se basa en una API independiente de la plataforma definida en el estándar de Java. El código de Java.
+* **Seguridad**: Los servlets bajo un único proceso (_servlet engine_). Se permite el acceso protegido integrado en un entorno de autenticación única.
+*  **Rendimiento**: Entorno de ejecución propio. Se ejecutan y permanecen en memoria. Se pueden precargar o cargar bajo demanda. Mantienen sesiones entre peticiones HTTP. Son multitarea. Son escalables entre multiprocesadores y sistemas heterogéneos.
+
+Las sesiones se implementan a través de la interfaz _javax.servlet.http.HttpSession_.
+
+### JSP: Java Server Pages
+Tecnología Java de server side scripting. Genera de manera dinámica contenidos de una página web (similar a JINJA2). Los archivos JSP contienen HTML, elementos JSP en los cuales se encuentran directivas y acciones, y código funcional Java. Estos archivos se solicitan igual que un documento HTML desde un navegador, la cosa es que se necesita un servidor web que soporte JSP.
+
+Los JSP se ejecutan en un _servlet engine_ específico (_jsp engine_).
+
+< html>< body>
+Hola < b> < %= request.getParameter("nombre") %> < /b>,
+socio < %= request.getParameter("tipo") %>. < br>
+Este input: < %= request.getParameter("escondido") %> era de tipo hidden.
+< br>
+< % String tipo = request.getParameter("tipo");
+if(tipo.equals("individual")) { %>
+Te toca pagar 30 euros
+< % } else if(tipo.equals("estudiante")) { %>
+Te toca pagar 15 euros
+< % } else { %>
+Te toca pagar 300 euros
+< % } %>
+< /body>< /html>
+
+El código va entre <% código %>.
+
+El código se vuelve farragoso y surgen bibliotecas de etiquetas para separar código funcional de HTML (estandar, _JSP Standard Tag Library, JSTL_).
+
+< %@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+< html>< body>
+Hola < b> < c:out value="${param.nombre}"/> < /b>,
+socio < c:out value="${param.tipo}"/>. < br>
+Este input: < c:out value="${param.escondido}"/> era de tipo hidden.
+< br>
+< c:choose>
+< c:when test = "${param.tipo == 'individual'}">
+Te toca pagar 30 euros
+< /c:when>
+< c:when test = "${param.tipo == 'estudiante'}">
+Te toca pagar 15 euros
+< /c:when>
+< c:otherwise>
+Te toca pagar 300 euros
+< /c:otherwise>
+< /c:choose>
+< /body>< /html>
+
+### EJB: Enterprise JAVA Beans
+EJB (desarrollada originalmente por IBM) es una API Java para encapsular lógica de negocio en back-end.
+
+## .NET
+Es una arquitectura de Microsoft para las aplicaciones Web. Consta de 3 componenetes principales:
+* Un entorno de aplicaciones independiente del lenguaje y optimizado para el entorno distribuido: **.NET Framework**. 
+* Un entorno de desarrollo para la programación de aplicaciones: **Visual Studio .NET**.
+* Un sistema operativo que soporta entornos distribuidos y el framework .NET: **Windows Server**.
+
+El framework .NET contiene:
+* _Common Language Runtime, CLR_. Este es el lenguaje común para la ejecución de los programas.
+* *Base Class Library* es una biblioteca básica de funciones estándar, como las de gestion de E/S, seguridad, comunicaciones, tareas, texto...
+* *ADO.NET* contiene clases para acceder a datos a través de ODBC, OLE DB, Oracle o SQL Server.
+* *XML* contiene clases para la manipulación de documentos XML.
+* *ASP.NET* contiene clases para el soporte de construcción de páginas Web.
+* *Windows Forms* contiene clases para soportar la constrccuión de clientes Windows.
+
+.NET framework no integra componentes para realizar lógica de negocio similares a EJBs. Se deben realizar como servicios de Windows o como componentes COM+.
