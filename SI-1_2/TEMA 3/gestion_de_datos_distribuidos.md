@@ -115,7 +115,7 @@ Connection conexion = ds.getConnection();
 ```
 
 ### EJEMPLO 2:
-![title](JavaSQL.png)
+![title](images/JavaSQL.png)
 
 ### Separación de responsabilidades
 Antiguamente se usaba **iBatis** hasta la versión 3.0. MyBatis es un framework de persistencia que soporta SQL, procedimientos almacenados y mapeos avanzados.
@@ -146,10 +146,10 @@ Las funciones y procedimientos almacenados:
 * La **sintaxis se valida en tiempo de ejecución**, no durante la creación.
 
 ### Procedimiento Almacenado
-![title](Procedimiento.png)
+![title](images/Procedimiento.png)
 
 ### Función
-![title](Funcion.png)
+![title](images/Funcion.png)
 
 ### Función 2
 ```sql
@@ -165,19 +165,19 @@ $$ LANGUAGE plpgsql;
 ```
 
 ### Salida en tuplas
-![title](tuplasSQL.png)
+![title](images/tuplasSQL.png)
 
 ### IF
-![title](IFSQL.png)
+![title](images/IFSQL.png)
 
 ### BUCLES WHILE
-![title](bucles.png)
+![title](images/bucles.png)
 
 ### Excepciones
-![title](excepcionesSQL.png)
+![title](images/excepcionesSQL.png)
 
 ### Cursores
-![title](cursoresSQL.png)
+![title](images/cursoresSQL.png)
 
 Los **triggers** se pueden considerar un tipo especial de procedimiento almacenado, la principal diferencia es que **un trigger se invoca de forma automática en respuesta a una modificación** de datos en una tabla. Es un mecanismo alternativo para validar la integridad de los datos, también ofrece una funcionalidad equivalente a un planificador de tareas dentro de la propia base de datos. Es un mecanismo sencillo para realizar una auditoría de datos independiente de la aplicación.
 
