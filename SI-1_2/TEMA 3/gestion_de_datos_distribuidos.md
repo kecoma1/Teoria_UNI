@@ -276,7 +276,19 @@ Hadoop cubre las necesidades de almacenamiento y procesamiento masivo de datos, 
 1. Se divide el problema en problemas menores (etapa *Map*).
 2. Luego los problemas más pequeños son resueltos paralelamente.
 3. El conjunto de soluciones a los problemas menores es sintetizado en una solución al problema original (etapa *Reduce*).
+![title](images/mapreduce.png)
 
-![title](images/explainMySQL.png)
+Hadoop, a parte, tiene un **ecosistema** ya que tiene una serie de sistemas de apoyo y complementos.
+* Sqoop. Transferencia de ficheros entre HDFS y bases de datos.
+* Flume. Transferencia de datos generados de forma continua a ficheros HDFS.
+* Oozie. Permite definir y ejecutar flujos de trabajo sobre Hadoop.
+* Hive. Motor SQL sobre ficheros HDFS.
+* Cludera Impala. Funcionalidad equivalente a Hive pero puede llegar a ser 100 veces más rápido.
+* Pig. Permite utilizar un lenguaje más sencillo que MapReduce en java (Pig Latin) para procesar datos.
+* Hue. Interfaz gráfica para componentes principales de Hadoop.
 
+MapReduce tiene **limitaciones**. Una de estas es la **complejidad** aunque reduce la dificultad de la programación paralela, su implementación es a bajo nivel y no trivial. Es **rigido** las soluciones siempre se deben expresar en 2 etapas con semántica muy estricta, esto a veces obliga a soluciones forzadas y poco naturales. Por último, es **antiguo**.
 
+La principal alternativa a *Hadoop* es **Apache SPARK**.
+
+Continuar con NOSQL. diapo 120
