@@ -197,3 +197,86 @@ BEFORE INSERT ON tableName
 FOR EACH ROW EXECUTE
 PROCEDURE tr_function();
 ```
+
+## Optimización de consultas
+En la actualidad la volumetría de los datos es enorme, es por esta razón que tenemos varias tipos de acceso a los datos en las bases de datos:
+- **Online**: Es un sistema de procesado que maneja transacciones en tiempo real y devuelve una salida lo antes posible.
+- **Offline/Batch**: Es un sistema de procesado que maneja grandes cantidades de datos en un momento determinado por una rutina.
+
+### Explain plan
+Las sentencias SQL usan **planes de ejecución**, estas definen la forma en la que el SGBD busca o inserta los datos. Gracias a este plan de ejecución podemos identificar cuellos de botella en la ejecución de una consulta.
+
+Estos planes de ejecución no están siempre actualizados, es por esta razón que es necesario hacer un **recálculo de estadísticas** después de cada gran actualización, así el motor del SGBD actualiza el la información sobre el contenido de las tablas.
+
+```sql
+ANALIZE TABLE -- MySQL
+ANALIZE -- PostgreSQL
+```
+
+El **explain plan en MySQL** se utiliza usando **EXPLAIN**, esto devuelve un plan de acceso de una sentencia SQL en forma de tabla: 
+- Cada fila contiene información de las tablas (físicas o no) empleadas en la consulta. 
+- El orden de las tablas indica el orden en el que se procesarían en la consulta.
+- Al usar **SHOW WARNINGS**, se muestran mensajes adicionales del optimizador.
+
+![title](images/explainMySQL.png)
+
+Existen también **estrategias de acceso**:
+- *Directo/Constante* (**CONST**): Tablas con un solo registro. Por valor en índice.
+- *Cruce por clave única* (**EQ_REF**).
+- *Clave no única* (**REF**).
+- *Merge de índices* (**INDEX_MERGE**).
+- *Clave única en subconsulta* (**UNIQUE_SUBQUERY**).
+- *Clave no única en subconsulta* (**INDEX_SUBQUERY**).
+- *Rango en índice* (**RANGE**): =, <>, >, >=, <, <=, IS NULL, BETWEEN, LIKE o IN.
+- *Full index scan* (**INDEX**).
+- *Full table scan, secuencial* (**ALL**).
+
+### EJEMPLOS DESDE DIAPOSITIVA 78.
+
+## Entornos de computación distribuida para grandes volúmenes de datos
+### BIG DATA
+El big data permita obtener información útil a partir de volúmenes de datos muy grandes.
+
+La razón por la que el big data se ha hecho tan popular ahora es por el incremento exponencial en la cantidad de datos generados y disponibles. A parte aparecen tecnologías de bajo coste que permiten su almacenamiento y procesamiento.
+
+En el big data hay 3 V's principales:
+* **Velocity**: Se refiere a la velocidad de los datos.
+* **Volume**: GB, TB, PB...
+* **Variety**: Para apps, web, tecnología social...
+
+Actualmente se añaden 2 V's más:
+* **Veracity**.
+* **Value**.
+
+Uno de los problemas del big data es la **volumetría**, cada vez hay más datos y se generan más datos. La **capacidad de procesamiento y almacenamiento** es otro problema ya que no es suficiente para algunas casuísticas.
+
+Para aumentar la V de *volumen* es necesario proporcionar **escalabilidad** en cuanto el almacenamiento y también en cuanto a la velocidad. Tenemos 2 tipos de escalabilidad:
+* **Horizontal**: Se distribuye la carga de trabajo entre varios ordenadores conectados entre sí. Normalmente estos ordenadores son baratos.
+  * *Ventajas*: Los** límites son mucho más altos** ya que pueden haber miles de ordenadores conectados. El aumentar de capacidad **no es tán caro**. Normalmente la escalabilidad es lineal.
+  * *Desventajas*: Requiere de software especificamente diseñado e implementado para ejecutarse en varios ordenadores a la vez.
+* **Vertical**: Se incrementa la potencia de la máquina en la que se ejecuta software ya sea mediante nuevos componentes o cambiando el ordenador completo.
+  * *Ventajas*. Si el software está preparado, es **más facil de escalar**.
+  * *Desventajas*. Aunque el software esté preparado, tarde o temprano encontraremos limitaciones, una de ellas el **precio**.
+
+### TEOREMA CAP
+La escalabilidad horizontal implica cierta probabilidad de que falle uno de los nodos conectados o la comunicación entre ellos. En estas condiciones hay 3 propiedades deseables:
+* **Consistencia**: Que todos los nodos contengan valores consistentes entre si en todo momento.
+* **Disponibilidad (Availability)**: Garantía de que cada petición a un nodo reciba una confirmación de si ha sido o no resuelta satisfactoriamente.
+* **Particionado (tolerancia al particionado)**: Que pueda fallar un nodo o conexión y el sistema funcionando.
+
+El teorema CAP dice que es imposible que un sistema ofrezca las 3 propiedades simultáneamente, solo se pueden cubrir 2 de ellas. Por ejemplo **MongoDB** sistemas CP.
+
+El problema de tener varios servidores, es que suelen caerse. El procesamiento distribuido en un contexto de big data requiere el uso de modelos computacionales no estándar cuyo objetivo es simplificar tareas  de programación complejas. La primera tecnología que tuvo éxito fue **Apache Hadoop**. Apache Hadoop es una implementación de código abierto del modelo de programación ***MapReduce***, el cual está basado en el sistema de ficheros **HDFS (Hadoop Distributed File System)**, que a su vez están basados en publicaciones de trabajos de investigación de Google. Ambas ideas fueron implementadas para un motor de búsqueda e indexación (Apache Nutch) por Doug Cutting.
+
+Hadoop cubre las necesidades de almacenamiento y procesamiento masivo de datos, las tareas se ejecutan en una red (cluster hadoop) de ordenadores conectados entre sí (nodos) que se reparten la tarea.
+
+**HDFS (Hadoop Distributed File System)** permite aprovechar y trabajar con la capacidad total de almacenamiento de todos los ordenadores a la vez, mostránsdonosla como si fuera uno solo. Es un sistema de almacenamiento tolerante a fallos (lo consigue gracias a la replicación).
+
+**MAPREDUCE**
+1. Se divide el problema en problemas menores (etapa *Map*).
+2. Luego los problemas más pequeños son resueltos paralelamente.
+3. El conjunto de soluciones a los problemas menores es sintetizado en una solución al problema original (etapa *Reduce*).
+
+![title](images/explainMySQL.png)
+
+
