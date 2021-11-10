@@ -291,4 +291,33 @@ MapReduce tiene **limitaciones**. Una de estas es la **complejidad** aunque redu
 
 La principal alternativa a *Hadoop* es **Apache SPARK**.
 
-Continuar con NOSQL. diapo 120
+## NoSQL
+Son bases de datos sin esquemas que mayormente utilizan interfaces distintas al SQL. En general dan soporte al almacenamiento de grandes cantidades de datos mediante escalabilidad horizontal. Son flexibles y operan sobre infraestructuras distribuidas como *Hadoop*.
+
+Una de las ventajas de NoSQL sobre el SQL tradicional es que el hecho de seguir esquemas y estructuras rígidas, implica que no son siempre adecuadas para un tratamiento rápido y flexible de la información. Las bases de datos NoSQL en realidad **son bases de datos no relacionales**, que escapan al modelo habitual de filas y columnas para almacenar la información modelada en forma de entidades y relaciones.
+
+Hay varios tipos de Bases de datos NoSQL:
+- **Clave-Valor**. Por ejemplo, *Redis*.
+- **Basadas en grafos**. Por ejemplo, ___Neo4j___ y *JanusGraph*.
+- **Basadas en columnas**. Utilizan filas y columnas, pero con nombres y formatos variables entre filas. Pueden verse como bases de datos basadas en clave-valor bidimensionales. Por ejemplo, *Cassandra* y *Hbase*.
+- **Basadas en documentos**: Utilizan documentos (diccionarios como en python pero aquí los llaman "documentos"). Por ejemplo, *CouchBase* y ___MongoDB___.
+
+### Bases de datos documentales
+
+Estas se basan en el modelo clave-valor, pero permitiendo el uso de meta-datos para aportar mayor expresividad. Cada documento consta de un ID único y los documentos son muy flexibles.
+
+Los datos se agrupan en colecciones y documentos, que serían como las tablas y las filas, respectivamente, en las bases de datos relacionales.
+
+Suelen usar el formato JSON aunque también se usa XML. La principal ventaja es la **flexibilidad** ya que no tienen estructuras predefinidas. Podemos tener documentos diferentes entre si, esto permite cambios ágiles, sin tener que modificar estructuras internas predefinidas, así como consultas más naturales y reducción de la verbosidad en la mayoría de los casos. Sin embargo esta flexibilidad es también una debilidad ya que hace que a la hora de introducir datos, pueda haber errores, por esta razón es necesario implementar métodos de saneado y limpieza de datos.
+
+### MongoDB
+
+Es un sistema de bases de datos orientado a documentos. Permite trabajar con documentos de manera **distribuida**. Cada documento puede tener estructuras diferentes (*schemaless*).
+
+Las carácteristicas ACID están comprometidas, solo se garantiza la atomicidad. Tiene un buen rendimiento de lectura y a parte permite el escalado horizontal. Tiene tambien un buen rendimiento cuando hay grandes cantidades de datos almacenados, aunque no es adecuado para transacciones complejas.
+
+Los componentes básicos de mongoDB son:
+- **Documento**: Unidad básica de almacenamiento. La información se guarda en formato BSON (Binary JSON). Se permiten documentos embebidos en otros.
+- **Colección**: Grupos de documentos.
+- **Base de Datos**: Contenedores físicos para almacenar colecciones.
+- **Cluster**: Almacena varias bases de datos.
