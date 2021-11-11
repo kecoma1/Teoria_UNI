@@ -321,3 +321,11 @@ Los componentes básicos de mongoDB son:
 - **Colección**: Grupos de documentos.
 - **Base de Datos**: Contenedores físicos para almacenar colecciones.
 - **Cluster**: Almacena varias bases de datos.
+
+### Bases de datos basadas en gráfos
+Si el nuevo paradigma son aplicaciones basadas en data lakes, hay oportunidad para bases de datos especializadas. Las aplicaciones sociales dan origen a muchos datos en forma de red (networks) que son naturalmente presentados como grafos.
+
+### NEO4J
+La representación y almacenado de los datos es en forma de grafo. Es "*Whiteboard friendly*". Esta centrado en las relaciones entre los datos, dejando un poco de lado los aspectos comunes entre conjuntos de datos. 
+
+Se define un lenguaje propio (***Cypher***) para manipulación de los datos pero existen varios lenguajes capaces de interactuar con Neo4J (*Java code*, *REST*, *Ruby console*, *Gremlin*...). 
