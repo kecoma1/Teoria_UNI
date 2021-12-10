@@ -5,7 +5,7 @@
 
 Qué tu sesión de estudio sea **útil y productiva**.
 
-La carpeta SI-1_2 tiene la más resumenes a parte de los que hay en la carpeta SI-1, como repetí la asignatura me hice resumenes más completos.
+La carpeta SI-1_2 tiene más resumenes a parte de los que hay en la carpeta SI-1. Recomiendo usar los resumenes de la carpete SI-1_2.
 
 Hermano dejame decirte que luces bien rico en esta imagen.
 ![title](random/brother.jpg)
