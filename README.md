@@ -9,4 +9,5 @@ La carpeta SI-1_2 tiene la más resumenes a parte de los que hay en la carpeta S
 
 Hermano dejame decirte que luces bien rico en esta imagen.
 ![title](random/brother.jpg)
+
 Sigue así, veo el progreso en ti. Eres un ganador.
