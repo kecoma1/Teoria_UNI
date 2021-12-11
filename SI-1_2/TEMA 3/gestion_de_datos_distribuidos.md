@@ -43,10 +43,40 @@ Una base de datos que se ajusta al modelo relacional puede representarse como un
 ### Agregaciones y agrupaciones
 Las agregaciones más comunes son *SUM*, *AVG*, *MIN*, *MAX*, *COUNT*. Estos son operador que calculan un valor único a partir de una columna de valores. Las agregaciones se pueden aplicar mediante *filtros* o *agrupaciones*.
 
-### Cruces de tablas (JOIN)
+### Cruces de tablas (JOIN) CREDITOS A Jota#8586 👑 
 En un cruce se toman 2 o más relaciones y se obtiene otra relación, en principio con todos los atributos de las relaciones que se han cruzado.
 
-**BUSCAR EN GOOGLE LOS DIFERENTES TIPOS DE JOIN**
+inner join -> Intersección
+outer join -> Conjunción
+left outer join -> la tabla de la izquierda tal cual, añadiéndole campos de la de la derecha a los de la izquierda que los tengan.
+left outer join -> la tabla de la derecha tal cual, añadiéndole campos de la de la izquierda a los de la derecha que los tengan.
+
+natural -> busca los que tienen el mismo valor y los cruza. Evita que se dupliquen campos muchas veces al juntarlos.
+on -> es como un where o un having. Se le da un predicado y junta de esa manera.
+using -> decirle qué campos tienen que coincidir para unir la tabla por ahí.
+
+### Combinación de relaciones
+Estas órdenes juntan tablas. Para unir dos tablas se necesita que tengan el mismo número de campos y que el tipo de los campos sea el mismo.
+
+union -> suma las dos tablas una tras otra.
+intersect -> obtiene solo los campos que son iguales
+except -> obtiene la resta de una tabla menos la otra
+
+PELIGRO: Intercept y except dependen del gestor de base de datos. Recomiendan no usarlo nunca.
+
+### Subconsultas
+
+S in R -> True si S está en R, False si no.
+exists R -> 
+
+Mejor poner un límite a las subconsultas antes de hacer operaciones con ellas.
+Si queremos obtener la lista de todos los actores con 10 películas debemos:
+ - Quitar a todos los que no cumplen la condición y luego ordenarlos y ponerles el nobre.
+No debemos:
+ - Ordenarlos y ponerles el nombre y después quitar los que no tienen 10 películas.
+Porque el segundo caso tendría que procesar muchos más datos para ordenarlos.
+
+
 
 ### Combinación de relaciones (UNION, INTERSECT, EXCEPT)
 
