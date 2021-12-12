@@ -5,6 +5,7 @@
 # Diagrama banco
 
 ![diagrama-banco](Ej2_diagrama.drawio.png)
+***En prestamo -> saldo, no es eso, es prestamo -> cantidad***
 
 ### Ejercicio 1
 
