@@ -41,7 +41,7 @@ Una base de datos que se ajusta al modelo relacional puede representarse como un
 * **DML**, lenguaje de manipulación de datos. Se incluye un lenguaje de consultas basado en álgebra relacional, se incluyen órdenes para insertar (*INSERT*), borrar (*DELETE/TRUCTATE*), modificar (*UPDATE*) y seleccionar (*SELECT*) (CRUD) tuplas en la base de datos.
 
 ### Agregaciones y agrupaciones
-Las agregaciones más comunes son *SUM*, *AVG*, *MIN*, *MAX*, *COUNT*. Estos son operador que calculan un valor único a partir de una columna de valores. Las agregaciones se pueden aplicar mediante *filtros* o *agrupaciones*.
+Las agregaciones más comunes son *SUM*, *AVG*, *MIN*, *MAX*, *COUNT*. Estos son operadores que calculan un valor único a partir de una columna de valores. Las agregaciones se pueden aplicar mediante *filtros* o *agrupaciones*.
 
 ### Cruces de tablas (JOIN) CREDITOS A Jota#8586 👑 
 En un cruce se toman 2 o más relaciones y se obtiene otra relación, en principio con todos los atributos de las relaciones que se han cruzado.
@@ -84,7 +84,7 @@ Permite combinar 2 o más relaciones compatibles. Estos operadores por defecto e
 
 ### Subconsultas
 
-Pueden aarecer subconsultas como parte de la condición descrita en la clausula WHERE, o en la clausula FROM sustituyendo una relación ya almacenada.
+Pueden aparecer subconsultas como parte de la condición descrita en la clausula WHERE, o en la clausula FROM sustituyendo una relación ya almacenada.
 
 ### Procesamiento de una consulta
 
@@ -99,7 +99,7 @@ Pueden aarecer subconsultas como parte de la condición descrita en la clausula 
 
 El **SQL interactivo** se define como el uso de SQL en el cliente del SGBD.
 
-Las aplicaciones no acceden a datos almacenados en bases de datos relacionales a través de SQL interactivo si no a través de un *middleware*, el **driver de la base de datos**. Este driver es específico del SGBD y es un leguaje de alto nivel.
+Las aplicaciones no acceden a datos almacenados en bases de datos relacionales a través de SQL interactivo si no a través de un *middleware*, el **driver de la base de datos**. Este driver es específico del SGBD y es un lenguaje de alto nivel.
 
 Existen varios **mecanismos de acceso de datos**:
 * **SQL embebido** (inmerso/incrustado) en el código. Las sentencias SQL están incrustadas dentro del propio código mediante strings.
@@ -208,6 +208,8 @@ $$ LANGUAGE plpgsql;
 
 ### Cursores
 ![title](images/cursoresSQL.png)
+
+### Triggers
 
 Los **triggers** se pueden considerar un tipo especial de procedimiento almacenado, la principal diferencia es que **un trigger se invoca de forma automática en respuesta a una modificación** de datos en una tabla. Es un mecanismo alternativo para validar la integridad de los datos, también ofrece una funcionalidad equivalente a un planificador de tareas dentro de la propia base de datos. Es un mecanismo sencillo para realizar una auditoría de datos independiente de la aplicación.
 
