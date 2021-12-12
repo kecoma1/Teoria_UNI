@@ -284,7 +284,7 @@ Uno de los problemas del big data es la **volumetría**, cada vez hay más datos
 
 Para aumentar la V de *volumen* es necesario proporcionar **escalabilidad** en cuanto el almacenamiento y también en cuanto a la velocidad. Tenemos 2 tipos de escalabilidad:
 * **Horizontal**: Se distribuye la carga de trabajo entre varios ordenadores conectados entre sí. Normalmente estos ordenadores son baratos.
-  * *Ventajas*: Los** límites son mucho más altos** ya que pueden haber miles de ordenadores conectados. El aumentar de capacidad **no es tán caro**. Normalmente la escalabilidad es lineal.
+  * *Ventajas*: Los **límites son mucho más altos** ya que pueden haber miles de ordenadores conectados. El aumentar de capacidad **no es tán caro**. Normalmente la escalabilidad es lineal.
   * *Desventajas*: Requiere de software especificamente diseñado e implementado para ejecutarse en varios ordenadores a la vez.
 * **Vertical**: Se incrementa la potencia de la máquina en la que se ejecuta software ya sea mediante nuevos componentes o cambiando el ordenador completo.
   * *Ventajas*. Si el software está preparado, es **más facil de escalar**.
