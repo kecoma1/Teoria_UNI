@@ -150,7 +150,7 @@ Connection conexion = ds.getConnection();
 ### Separación de responsabilidades
 Antiguamente se usaba **iBatis** hasta la versión 3.0. MyBatis es un framework de persistencia que soporta SQL, procedimientos almacenados y mapeos avanzados.
 
-**Hibernate ORM** permite a los desarrolladoes a escribir aplicaciones cuyos datos se escapan del proceso de la aplicación.
+**Hibernate ORM** permite a los desarrolladores a escribir aplicaciones cuyos datos se escapan del proceso de la aplicación.
 
 **SQLAlchemy** es una herramienta y mapeador de objetos relacionados para **python**. Da a los desarrolladores poder absoluto y la flexibilidad de SQL.
 
