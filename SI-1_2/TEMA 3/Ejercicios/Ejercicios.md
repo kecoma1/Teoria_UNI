@@ -194,3 +194,25 @@ print("[QUERY 3]: ")
 for res in result:
 	print(res)
 ```
+
+### Ejercicio 8
+
+![Esquema8](Ej8.drawio.png)
+
+```cql
+// Creamos "nodos"
+CREATE (:profesor {nombre: "Profesor 1", email: "A@a.a", despacho: "1-A"})
+CREATE (:profesor {nombre: "Profesor 2", email: "B@a.a", despacho: "1-A"})
+
+CREATE (:alumno {nombre: "k1", nia: 331211, email: "k1@gmail.com"})
+CREATE (:alumno {nombre: "k2", nia: 331211, email: "k2@gmail.com"})
+CREATE (:alumno {nombre: "k3", nia: 331211, email: "k3@gmail.com"})
+
+CREATE (:asignatura {nombre: "PSI", semestre: 1, curso: 3})
+CREATE (:asignatura {nombre: "SI-1", semestre: 1, curso: 3})
+CREATE (:asignatura {nombre: "SI-2", semestre: 2, curso: 3})
+
+// Creamos relaciones
+MATCH (p:profesor) WHERE p.nombre = "Profesor 1" MATCH (a:asignatura) WHERE a.nombre = "SI-1" CREATE (p) -[:imparte {grupo: "123", aula: 2}] -> (a)
+
+MATCH (a:alumno) WHERE a.nombre CONTAINS "K" MATCH (b:asignatura) WHERE b.nombre CONTAINS "SI" CREATE (a) - [:cursa {grupo: 123, aula: 3}] -> (b)
