@@ -144,20 +144,20 @@ Tabla:
 
 # Resumen tabla (IMPORTANTE PARA EL EXAMEN)
 Grado 3: 
-    - Bien formadas y 2 fases (**escritura** y **lectura**)
-    - Bloqueos en **escritura** y **lectura** y **se mantienen hasta el final de la transacción**
+- Bien formadas y 2 fases (**escritura** y **lectura**)
+- Bloqueos en **escritura** y **lectura** y **se mantienen hasta el final de la transacción**
 
 Grado 2:
-    - Bien formada (**escritura** y **lectura**) 2 fases (**escritura**)
-    - Bloqueos en **escritura** y **lecturas**
+- Bien formada (**escritura** y **lectura**) 2 fases (**escritura**)
+- Bloqueos en **escritura** y **lecturas**
 
 Grado 1:
-    - Bien formadas y 2 fases (**escritura**)
-    - Bloqueos en **escritura**
+- Bien formadas y 2 fases (**escritura**)
+- Bloqueos en **escritura**
 
 Grado 0:
-    - Bien formada (**escritura**)
-    - **No hay bloqueos** obligatorios.
+- Bien formada (**escritura**)
+- **No hay bloqueos** obligatorios.
 
 ## Interbloqueo (Deadlock)
 Situación de bloqueo recíproco de recursos que producen espera ilimitada.
