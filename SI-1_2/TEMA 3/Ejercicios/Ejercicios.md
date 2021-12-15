@@ -201,18 +201,21 @@ for res in result:
 
 ```cql
 // Creamos "nodos"
-CREATE (:profesor {nombre: "Profesor 1", email: "A@a.a", despacho: "1-A"})
-CREATE (:profesor {nombre: "Profesor 2", email: "B@a.a", despacho: "1-A"})
+CREATE (:profesor {nombre: "Pablo Cerro", despacho: "1-B"})
+CREATE (:profesor {nombre: "Alberto Suarez", despacho: "1-A"})
 
-CREATE (:alumno {nombre: "k1", nia: 331211, email: "k1@gmail.com"})
-CREATE (:alumno {nombre: "k2", nia: 331211, email: "k2@gmail.com"})
-CREATE (:alumno {nombre: "k3", nia: 331211, email: "k3@gmail.com"})
+CREATE (:alumno {nombre: "Kevin de la Coba", nia: 123456})
+CREATE (:alumno {nombre: "Jose Manuel Freire", nia: 654321})
 
-CREATE (:asignatura {nombre: "PSI", semestre: 1, curso: 3})
-CREATE (:asignatura {nombre: "SI-1", semestre: 1, curso: 3})
-CREATE (:asignatura {nombre: "SI-2", semestre: 2, curso: 3})
+CREATE (:asignatura {nombre: "IA", curso: 3})
+CREATE (:asignatura {nombre: "SI-1", curso: 3})
 
 // Creamos relaciones
-MATCH (p:profesor) WHERE p.nombre = "Profesor 1" MATCH (a:asignatura) WHERE a.nombre = "SI-1" CREATE (p) -[:imparte {grupo: "123", aula: 2}] -> (a)
+MATCH (a:asignatura) WHERE a.nombre = 'SI-1' MATCH (b:profesor) WHERE b.nombre CONTAINS 'Pablo' CREATE (b) - [:imparte {aula: 1}] -> (a)
 
-MATCH (a:alumno) WHERE a.nombre CONTAINS "K" MATCH (b:asignatura) WHERE b.nombre CONTAINS "SI" CREATE (a) - [:cursa {grupo: 123, aula: 3}] -> (b)
+MATCH (a:asignatura) WHERE a.nombre = 'IA' MATCH (b:profesor) WHERE b.nombre CONTAINS 'Alberto' CREATE (b) - [:imparte {aula: 2}] -> (a)
+
+MATCH (a:alumno) WHERE a.nombre CONTAINS 'Kevin' MATCH (b:asignatura) CREATE (a) - [:cursa] -> (b) 
+
+MATCH (a:alumno) WHERE a.nombre CONTAINS 'Jose' MATCH (b:asignatura) WHERE b.nombre = 'SI-1' CREATE (a) - [:cursa] -> (b)
+```
