@@ -95,3 +95,49 @@ Ejemplos de metodologías ágiles son:
 * XP (eXtreme Programming)
 * KANBAN
 * SCRUM
+
+## XP (eXtreme Programming)
+
+Se usa un enfoque orientado a objetos como paradigma preferido de desarrollo, y engloba un conjunto de reglas y prácticas que ocurren en el contexto de 4 actividades estructurales: *Plan*, *diseño*, *codificación* y *pruebas*.
+* **Plan**: Comienza escuchando (captura de requisitos), esto lleva a la creación de "**historias**" (historias del usuarios) que describen la salida necesaria, características y funcionalidad del software que se va a elaborar. A cada historia se le asigna una **prioridad** y después los miembros del equipo XP evaluán cada historia y le asignan un costo, medido en semanas de desarrollo. A medida que avanza el trabajo, el cliente **puede agregar historias**, **cambiar la prioridad de una**, **descomponerlas** o **eliminarlas**.
+* **Diseño**: Se sigue el principio KISS (keep it simple stupid). En XP se estimula el uso de tarjetas CRC como un mecanismo eficaz para pensar en el software en un contexto orientado a objetos. Las tarjetas CRC (clase-responsabilidad-colaborador) identifican y organizan las clases orientadas a objetos que son relevantes para el incremento actual del software. Se estimula el **rediseño** (*El rediseño es el proceso mediante el cual se cambia un sistema de software en forma tal que no altere el comportamiento extremo del código, pero sí mejore la estructura interna*). El diseño ocurre *antes* y *después* de la codificación.
+* **Codificación**: Una vez las historias están hechas y el diseño preliminar está hecho, el equipo **no inicia la codificación**, se desarrollan una seroe de pruebas unitarias para cada una de las historias que se van a incluir en la entrega en curso. Una vez creada la prueba unitaria, se desarrolla el código. En XP es clave la **programación por parejas**, se recomienda que dos personas trabajen juntas en una estación de trabajo con el objeto de crear código para una historia (dos mentes piensan mejor que una). A medida que el código de los desarrolladores va acabando, este se va integrando con los demás.
+*  **Pruebas**: Las pruebas que se creán deben implementarse con el uso de una estructura que permita automatizarlas, esto estimula el uso de una estrategia de pruebas de **regresión**.
+
+## SCRUM
+
+Los principios Scrum son congruentes con el manifiesto ágil y se utilizan para guiar actividades de desarrollo dentro de de un proceso de análisis que incorpora las siguientes actividades estructurales: **requisitos**, **análisis**, **diseño**, **evolución** y **entrega**. Dentro de cada actividad estructural, las tareas ocurren con un patrón llamado **sprint**. Se acentúa el uso de patrones de proceso del software, estos definen un grupo de acciones de desarrollo:
+* **Retraso**: Lista de prioridades de los requerimientos o características del proyecto que dan al cliente un valor del negocio. Es posible agregar en cualquier momento otros aspectos al retraso.
+* **Sprints**: Consiste en unidades de trabajo que se necesitan para alcanzar un requerimiento definido en el retraso que debe ajustarse en un acaja de tiempo predefinida. Durante el sprint no se introducen cambios.
+* **Reuniones Scrum**: Son reuniones breves que el equipo Scrum efectúa a diario. Hay 3 preguntas clave que se pide que respondan todos los miembros del equipo:
+  * *¿Qué hiciste desde la última reunión del equipo?*
+  * *¿Qué obstáculos estás encontrando?*
+  * *¿Qué planeas hacer mientras llega la siguiente reunión del equipo?*
+
+  El lider del equipo llamado *maestro Scrum*, dirige la junta y evalúa las respuestas de cada persona.
+
+* **Demostraciones preliminares**: Entregar el incremento de software al cliente de modo que la funcionalidad que se haya implementado pueda demostrarse al cliente.
+
+## Desarrollo centrado en el usuario
+
+El Diseño Centrado en el Usuario (DCU) es una filosofía de diseño que tiene por objetivo la creación de productos que resuelvan necesidades concretas de sus usuarios finales, consiguiendo la mayor satisfacción y mejor experiencia de uso posible con el mínimo esfuerzo de su parte.
+
+El usuario juega un papel fundamental antes, durante y después de la construcción del software.
+
+El objetivo principal es el aseguramiento de la **usabilidad** del sistema final.
+Fases generales de Modelos de Procesos Centrados en el Usuario:
+* Conocer a fondo a los usuarios finales.
+* Diseñar un producto que resuelva sus necesidades y se ajuste a sus capacidades, expectativas y motivaciones.
+* Poner a prueba lo diseñado, normalmente usando test de usuario.
+
+### Usabilidad
+
+Medida en la que un producto se puede usar por determinados usuarios para conseguir objetivos específicos con efectividad, eficiencia y satisfacción en un contexto de uso especificado.
+
+Métricas generales de la Usabilidad:
+* Exactitud: Número de errores cometidos por los sujetos de prueba y si estos fueron recuperables o no al usar los datos o procedimientos adecuados.
+* Tiempo requerido para concluir la actividad.
+* Recuerdo: Qué recuerda el usuario después de un periodo sin usar la aplicación.
+* Respuesta emocional: Cómo se siente el usuario al terminar la tarea (bajo tensión, satisfecho, molesto, etc).
+
+La **Accesibilidad** es un caso específico de Usabilidad. Necesita mayor involucración de los usuarios en todas las fases del proyecto y el desarrollo es *Universal* o *para todos*.
