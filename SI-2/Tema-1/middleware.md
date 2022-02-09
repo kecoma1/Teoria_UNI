@@ -45,7 +45,7 @@ En el caso 1, se ha hablado de **un mecanismo de representación de los datos in
 * **JSON**. Formato legible y ligero para el intercambio de datos.
 * **Codificación de caracteres**: Ejemplo, *UTF-8*.
 
-### Mecanismos de comunicación cliente-servidor
+## Mecanismos de comunicación cliente-servidor
 ![esquema-comunicacion](img/comunicacion.png)
 
 Tenemos 2 modelos de interacción:
@@ -56,10 +56,10 @@ También tenemos protocolos de intercambio:
 
 ![protocolos-intercambio](img/protocolos.png)
 
-### APIs directas
+## APIs directas
 Uso directo a una interfaz de programación para acceder a los servicios de comunicaciones. Habitualmente los servicios son de nivel de transporte o sesión, las comunicaciones son orientadas a conexión (datagramas), la ubicación en los extremos no es transparente para el programa ("*close to the wire*").
 
-### Sockets
+## Sockets
 Son incluidos como medio de programación de comunicaciones en el Unix de Berkeley (BSD) versión 4.2 en 1981. Son también adaptados a AT&T Unix como *Transport Level Interface*.
 
 Establecen un camino de comunicación entre:
@@ -75,7 +75,7 @@ Establecen un camino de comunicación entre:
 
 ![orientada-a-conexión](img/conex.png)
 
-### Remote Procedure Calls (RPC)
+## Remote Procedure Calls (RPC)
 
 Es la ejecución de un servicio en el cliente la cual se realiza del mismo modo que una llamada a una función local:
 * El cliente llama a una función.
@@ -110,3 +110,55 @@ Se utiliza como protocolo TCP o UDP. Existe un problema, y es conocer el puerto 
 1. El programa servidor se registra en *Port Mapper*.
 2. El programa cliente pregunta a *Port Mapper* por el puerto.
 3. Se establece la conexión en el puerto.
+
+## SUN RPC
+
+Está implementado en Unix y windows, ahora se llama ONC RPC (Open Network Computing Remote Procedure Call). Tiene 3 componentes:
+1. **Lenguaje de definición de tipos de datos (eXternal Data Representation, *XDR*)**. Es un **lenguaje de definición de datos** que permite definir los datos a intercambiar entre el cliente y el servidor RPC de forma transparente al ordenador y lenguaje en que se trabaje.
+2. **Lenguaje de especificación de RPC**. Contiene declaraciones XDR y especificación de programas, versiones y procedimientos. El compilador es *rpcgen*, el cual genera *client stub*, *server stub* y un *fichero de interfaz* (include).
+3. **Librería de implementación**.
+
+![programación-RPC](img/RPC-prog.png)
+
+El **paso de parametros** se puede hacer de las siguientes formas:
+* Los **RPCs** en general soportan *múltiples parámetros* los cuales pueden ser de entrada y de salida. Se realiza el *Parameter Marshalling / Demarshalling*.
+* Los **RPCs SUN** aceptan un *único parámetro de entrada* (parámetro del RPC) y *un único parámetro de salida*, estos pueden ser estructuras. El *parámetro de entrada es constante*. El proceso de *Marshalling / Demarshalling* es mínimo en el RPC ya que es responsabilidad del usuario.
+* Los **Apollo RPC (DEC)** reciben *múltiples parámetros*, los cuales tienen indicado si son de entrada y salida. 
+
+## Servicios Web (Web Services, WS): WS basados en SOAP
+
+Concebido como un nuevo modelo de uso de la Web (Application Centric Web). 
+
+Las transacciones son iniciadas automáticamente por un programa, no necesariamente utilizando un navegador.
+
+Se pueden describir, publicar, descubrir e invocar dinámicamente en un entorno distribuido.
+
+El Middleware está sobre internet, este tiene funcionalidad para *publicar y descubrir* servicios dinámicamente y *ejecutar* servicios siguiendo un modelo RPCs. Los servicios son *multi-tier* (un servidor puede a su vez solicitar servicios).
+
+### Componentes
+
+![componentes-soap](img/SOAP.png)
+
+* El **provider** es quien *ejecuta* los servicios solicitados y *publica la disponibilidad* a través del registrador.
+* El **registrador de servicios (service broker)** da soporte para la publicación y localización de servicios.
+* El **Cliente (Service Requester)** *busca* los servicios a traves del service broker y *enlaza* con los servicios del service provider.
+
+## SOAP (Service Oriented Architecture Protocol)
+
+Es un protocolo basado en XML para el intercambio de información entre ordenadores. Es independiente de la plataforma y del lenguaje de programación.
+
+La estructura de un mensaje SOAP es la siguiente:
+- **Sobre** (SOAP-ENV:Envelope).
+- **Cabecera** (opcional) (SOAP-ENV:Header). Contiene información general a nivel de aplicación.
+- **Cuerpo** (SOAP-ENV: Body): Contiene la petición o la respuesta. Puede incluir elementos genéricos de información de errores (SOAP-ENV:Fault).
+
+### Web Services Description Language, WSDL
+
+Lenguaje XML para especificar la interfaz pública de un servicio Web.
+Estructura de una declaración WSDL:
+* \<definitions>: Elemento raíz que contiene el resto. Define su nombre y los espacios de nombres que utiliza.
+* \<types>: Tipos de datos utilizados entre cliente y servidor. Usa W3C XML Schema (XSD) por defecto.
+* \<message>: Declaraciones de mensajes empleados para peticiones y respuestas y los elementos que los forman.
+* \<portType>: Operaciones soportadas y encadenamiento de mensajes que implica su ejecución.
+* \<binding>: Modo en que los mensajes se transmiten sobre un protocolo de RPC, con extensiones específicas para SOAP.
+* \<service>: Contiene la información de la dirección en la que se localiza el servicio.
