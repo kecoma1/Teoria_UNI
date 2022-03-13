@@ -19,8 +19,8 @@ sudo gedit /etc/postgresql/12/main/pg_hba.conf
 
 > Añadir estas líneas al archivo
 ```
-local all alumnodb md5
-host all alumnodb 127.0.0.1/32 md5
+local 	all		alumnodb 				md5
+host 	all 		alumnodb 	127.0.0.1/32 		md5
 ```
 > Guardar
 
