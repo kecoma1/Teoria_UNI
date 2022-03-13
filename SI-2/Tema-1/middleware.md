@@ -162,3 +162,85 @@ Estructura de una declaración WSDL:
 * \<portType>: Operaciones soportadas y encadenamiento de mensajes que implica su ejecución.
 * \<binding>: Modo en que los mensajes se transmiten sobre un protocolo de RPC, con extensiones específicas para SOAP.
 * \<service>: Contiene la información de la dirección en la que se localiza el servicio.
+
+### Ventajas e inconvenientes *Web Services basados en SOAP*
+
+## Representational State Transfer (REST)
+Es un modelo de arquitectura para sistemas hipermedia distribuidos como la World Wide Web y definido por el W3C.
+
+**REST es una arquitectura**, no un estándar. Incluye el uso de estándares como HTTP, XML, MIME, etc. Este es el modelo de interacción habitual con la WWW. Los sistemas que siguen los principios REST se llaman con frecuencia *RESTful*.
+
+El sistema se compone de **recursos**: 
+Un recurso *es cualquier elemento que debe ser accedido* en el sistema distribuido. Los recursos *se acceden a través de un identificador* global (URI). Cada acceso a un recurso *se contesta con una Representación* del mismo. Existen diferentes *modos de ver el recurso*, en función de la consulta o el estado. En la representación del recurso *se pueden incluir enlaces* a representaciones relacionadas o con
+mayor nivel de detalle.
+
+*La recepción de la representación provoca un cambio de estado* en el elemento que la recibe.
+
+El *acceso a los recursos se realiza mediante una interfaz uniforme*, **basada en el intercambio de mensajes HTTP**, con los métodos estándar GET, PUT, DELETE, POST.
+
+### Diferencias entre el WS SOAP vs WS REST
+
+**Ventajas REST**:
+* Ligero. No necesariamente sobre XML.
+* Fácil de implementar.
+* Es posible navegar de un recurso REST a muchos otros, simplemente siguiendo enlaces sin requerir el uso de registros u otra infraestructura adicional.
+
+**Ventajas de SOAP**:
+* Fácil de consumir ya que es un estándar.
+* Rígido: tipado fuerte, sigue un contrato.
+* Herramientas de desarrollo generación automática de stubs, etc.
+
+## Sistemas de objetos distribuidos
+Se realizan llamadas a métodos para solicitar la ejecución de acciones por parte de un objeto. Del mismo modo se realizan comunicaciones entre objetos remotos mediante invocación de métodos remotos (*Remote Method Invocation, RMI*) aunque es necesario un middleware para realizar la interconexión.
+
+Para **implementar un RMI** son necesarios:
+* **Módulo de comunicación**: Es el responsable de comunicar sistemas remotos y de la semántica adecuada de la llamada.
+* **Módulo de referencia remota**: Es el responsable de traducir las referencias entre objetos locales y objetos remotos.
+* **Objeto Proxy**: Hace transparente la invocación al objeto remoto para el cliente.
+* **Distribuidor**: Determina el método del objeto remoto que se debe ejecutar.
+* **Esqueleto**: Realiza el parameter unmarshalling y marshalling para ejecutar el método elegido y devolver resultados.
+
+Plataformas de objetos distribuidos: *Object Management Architecture (OMA)*, *.Net Remoting*, *Java Remote Method Invocation, RMI*.
+
+### Modelo de objetos (CORBA)
+
+Un objeto CORBA es un **objeto virtual**, es decir, no tiene existencia por sí mismo si no hay detrás un objeto en un determinado lenguaje de programación que lo soporte.
+* Ofrece un servicio.
+* Se define mediante el IDL (Interface Description Language), pero puede estar implementado en *cualquier lenguaje*.
+* Se identifica de manera única mediante su referencia a un objeto remoto.
+* Existe transparencia de acceso. Se invocan métodos como: ```objeto.metodo(parametros)```
+
+La comunicación puede ser *síncrona*, *asíncrona* y *one-way (sin respuesta)*
+
+El **Object Management Architecture (OMA)** tiene diferentes elementos:
+* **Object Request Broker, ORB**. Bus de comunicación entre objetos.
+* **Common Object Services**. Componentes que implementan servicios *al nivel del sistema*.
+* **Common Facilities**. Colecciones de componentes, con funciones de tipo general, pero orientados a aplicaciones finales en vez de al sistema.
+* **Domain Interfaces**. Conjunto de servicios, similar a los anteriores, pero de tipo vertical: Específicos para cada área de aplicaciones.
+* **Application Interfaces**. Interfaces específicas de aplicaciones concretas.
+
+El **Object Request Broker (ORB)**, es el elemento central y principal de esta arquitectura. Es un **bus de objetos** que *permite la comunicación entre ellos de forma transparente*. A parte, es un Middleware avanzado:
+* Permite llamadas estáticas y dinámicas a objetos. Se incluye el descubrimiento dinámico de objetos.
+* Lengauje de descripción de interfaces independiente del lenguaje de programación (IDL).
+* Enlace directo de aplicaciones escritas en múltiples lenguajes de alto nivel.
+* Sistema auto-descrito (**introspección**). Genera meta-información sobre todo el sistema, consultable dinámicamente (repositorio de interfaces).
+* Transparencia de ubicación y de acceso.
+* Soporte de seguridad y autenticación.
+* Soporte de transacciones.
+* Polimorfismo en la ejecución de funciones asociadas a un mismo mensaje.
+
+Existen protocolos **inter-ORB**:
+* ***General Inter-ORB PROTOCOL (GIOP)***: Formatos de mensajes y representación de datos común para todos los ORBs. Existe un estándar para la representación de los datos (**Common Data Representation (CDR)**). Por último, los objetos son interoperables (**Interoperable Object References (IOR)**).
+* ***Internet Inter-ORB Protocol (IIOP)***: Especifica el intercambio de mensajes GIOP sobre protocolo de transporte **TCP/IP**.
+* ***Enviroment-Specific Inter-ORB Protocols (ESIOP)***: Interconexión de ORBs a través de Middlewares específicos.
+
+Los **Interface Definition Language (IDL)**, son similares a RPC XDL y a DCE IDL. Se definen interfaces independientemente del lenguaje de programación.
+
+Se puede **compilar** el IDL generando: *Stubs cliente*, *Stubs de servidor* (CORBA los denomina esqueletos) y *ficheros de definiciones*.
+
+También, existen **traductores** de IDL, que generan código fuente del lenguaje elegido.
+
+
+CORBA tiene **dos modos** básics de funcionamiento del cliente:
+* **Invocación estática**: El cliente conoce la estructura del servidor, los métodos... y las llamadas se resuelven en *tiempo de compilación*.
+* **Invocación dinámica**: Se descubren objetos en tiempo de ejecución, las llamadas se generan de forma dinámica, el cliente consulta el repositoria de interfaces.
