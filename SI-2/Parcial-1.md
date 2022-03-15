@@ -46,8 +46,8 @@
 * **Clientes**:
   * *Heterogéneos*:
     * **CORBA**.
-  * *Homogéneos*:
     * **Cola de mensajes**.
+  * *Homogéneos*:
 * **Bloqueos del cliente a la espera de respuesta**:
   * *Hay bloqueo*: 
     * **Comunicación no orientada a conexión UDP**.
