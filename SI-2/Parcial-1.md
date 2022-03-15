@@ -38,16 +38,15 @@
 # EXAMEN - Ejercicio "Solución más apropiada"
 * **Acoplamiento temporal**:
   * *Acopladas en el tiempo (servidor y cliente conectados a la vez) - Síncrono*: 
-    * **Comunicación no orientada a conexión UDP**.
-    * **CORBA**.
-    * **SOAP**.
+    * **LOS DEMÁS**
   * *No acopladas en el tiempo - Asíncrono*:
-    * **Cola de mensajes**.
+    * **Cola de mensajes**. SOLO COLA
 * **Clientes**:
   * *Heterogéneos*:
     * **CORBA**.
     * **Cola de mensajes**.
   * *Homogéneos*:
+    * **JAVA RMI**.
 * **Bloqueos del cliente a la espera de respuesta**:
   * *Hay bloqueo*: 
     * **Comunicación no orientada a conexión UDP**.
@@ -55,4 +54,4 @@
     * **Cola de mensajes**.
 * **Traducción de datos**:
   * *Necesaria*:
-    * **CORBA**.
+    * **CORBA**. PUEDE ESTAR MAL
