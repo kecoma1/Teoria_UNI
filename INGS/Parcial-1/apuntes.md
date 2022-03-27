@@ -48,3 +48,47 @@ Por último tenemos varios tipos de actividades:
 * *Gestión*: Planificación, estimación, seguimiento, dirección...
 * *Operación*: Entrega, puesta en marcha, formación...
 
+# Tema 2
+Un **proceso de software** es una serie de actividades relacionadas que conducen a la elaboración de un producto de software
+
+En un proceso software se usan **metodologías**. Las metododologías se encargan de optimizar el proceso y producto software. A parte, guián en la planificación y en el desarrollo del software. Las metodologías definen una estrategia global para enfrentarse con el proyecto: *Fases*, *Productos (final e indermedios)*, *Procedimientos y herramientas*, *Criterios de evaluación*.
+
+También tenemos el **ciclo de vida**. Es el conjunto de fases por las que pasa el sistema que se está desarrollando desde que nace la idea inicial hasta que el software es retirado o reemplazado.
+
+Las metodologías definen el ciclo de vida que más se adecúe a las condiciones y características del desarrollo.
+
+Existen varios tipos de metodologías:
+* **Pesadas o tradicionales**: Fases bien definidas, entregadas al final, requisitos y planificación bien definidos.
+* **Ágiles**: Continua interacción con el cliente, muchas entregas parciales y ciclo de vida iterativos más cortos.
+* **Centrados en el usuario**: Interacción continua con el usuario.
+
+### Metodologías Tradicionales
+
+* **Cascada simple**.
+* **Cascada con refinamiento**.
+* **Incremental**. El problema se divide en sub-problemas.
+* **Iterativo**. Se van creando versiones del producto.
+* **Incremental-Iterativo (unificado)**.
+
+### Metodología Metrica
+
+Desarrollada por españita.
+
+### Metodología Ágil
+
+* **XP (eXtreme Programming)**.
+* **KANBAN**.
+* **SCRUM**.
+
+### Metodología centrada en el usuario
+
+Creación de productos que resuelvan necesidades concretas de sus usuarios finales.
+
+## Usabilidad
+La usabilidad es la medida en la que un producto se puede usar por determinados usuarios para conseguir objetivos con efectividad, eficiencia y satisfacción en un contexto de uso especificado.
+
+Las métricas generales de la usabilidad son:
+* **Exactitud**: Número de errores cometidos por los sujetos de prueba.
+* **Tiempo requerido para concluir la actividad**.
+* **Recuerdo**.
+* **Respuesta emocional**.
