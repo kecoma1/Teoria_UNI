@@ -92,3 +92,21 @@ Las métricas generales de la usabilidad son:
 * **Tiempo requerido para concluir la actividad**.
 * **Recuerdo**.
 * **Respuesta emocional**.
+
+# Tema 3
+
+En el desarrollo del software existen unas **actividades tempranas en el desarrollo de software**.
+
+Se definen, las *fases*, el *orden* y las *entradas y salidas*, en base a las características del proyecto.
+
+Se definen *estándares*, *métodos*, *técnicas* y *herramientas*.
+
+Se definen *objetivos*, *entradas* y *salidas*.
+
+Se definen *criterios de calidad y validación* de acuerdo con la *especificación de requisitos*, *resultados esperados*, *plan de validación*... Debe haber un acuerdo entre todos los participantes en el proyecto.
+
+Se definen ***hitos*** los cuales tienen ligados *productos*. Se consigue un hito cuando se ha revisado la calidad de uno o más productos y se han aceptado. Tras cada hito se debería generar un informe de progreso del proyecto.
+
+Se crea el *equipo de desarrollo*.
+
+Se definen los mecanismos de seguimiento y control.
