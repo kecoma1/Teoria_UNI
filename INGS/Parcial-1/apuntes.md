@@ -110,3 +110,25 @@ Se definen ***hitos*** los cuales tienen ligados *productos*. Se consigue un hit
 Se crea el *equipo de desarrollo*.
 
 Se definen los mecanismos de seguimiento y control.
+
+# Tema 4
+
+En la ingeniería del software tenemos una fase a la que denominamos análisis. En esta fase se hace la **captura de requisitos**. Los requisitos pueden ser:
+* **Requisitos de usuario**. Son declaraciones de las funciones o acciones que los distintos usuarios pueden realizar con la aplicación y bajo qué restricciones.
+* **Requisitos de software**. Especifican de una manera completa *qué debe hacer y cómo debe comportarse el software* para cumplir con los objetivos de la aplicación.
+
+En la fase de análisis tenemos varias tareas: *Analizar el problema*, *analizar a los usuarios y las tareas*, *educir requisitos (identificarlos)*, *analizar requisitos*, *representar los requisitos (modelarlos)* y por último *validarlos*.
+
+Tenemos varios tipos de requisitos:
+* **Funcionales**: Son acciones fundamentales que tienen que tener lugar en la ejecución del software.
+* **No funcionales**: Representan características o cualidades generales que se esperan del software para conseguir su propósito. Tenemos no funcionales en relación con la *interfaz y la usabilidad*, *operacionales*, *documentación*, *seguridad*, *rendimiento*...
+
+Las maquetas no se usan después de haberlas presentado, se tiran. Son solo para que el cliente se haga una idea de lo que se va a hacer.
+
+Los requisitos deben ser **válidos**, para eso deben ser:
+* **Completos**: Todo lo que el software tiene que hacer está recogido en el conjunto de requisitos.
+* **No ambiguos**: Cada requisito debe tener una sola interpretación.
+* **Relevantes**: Importancia para el sistema software a implementar.
+* **Traceables**: Cada acción de diseño debe corresponderse con algún requisito, y debe comprobarse.
+* **Correctos**: Cada requisito establecido debe representar algo requerido por el usuario para el sistema que se construye.
+* **Consistentes**: Ningún requisito puede estar en conflicto con otro.
