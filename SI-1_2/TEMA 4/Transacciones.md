@@ -146,6 +146,7 @@ Tabla:
 Grado 3: 
 - Bien formadas y 2 fases (**escritura** y **lectura**)
 - Bloqueos exclusivos ***largos*** en escrituras y ***largos*** compartidos en lectura.
+- Bloqueos hasta EOT (End Of Transaction)
 
 Grado 2:
 - Bien formada (**escritura** y **lectura**) 2 fases (**escritura**)
